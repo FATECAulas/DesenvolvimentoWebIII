@@ -1,0 +1,136 @@
+Comandos do Git
+a) git init
+
+Inicializa um novo repositório Git na pasta atual, criando a pasta oculta .git que controla o versionamento.
+
+b) git config --global user.name "turing"
+
+Define o nome do usuário do Git globalmente (para todos os repositórios).
+Esse nome aparece nos commits.
+
+c) git add EXERCICIO.txt
+
+Adiciona apenas o arquivo EXERCICIO.txt à Stage Area, preparando ele para o commit.
+
+d) git add .
+
+Adiciona todos os arquivos modificados ou novos da pasta atual para a Stage Area.
+
+e) git commit -m "Adicionado nova interface"
+
+Cria um commit (registro das alterações) com uma mensagem diretamente no comando.
+
+f) git commit
+
+Cria um commit, mas o Git abre um editor de texto para você escrever a mensagem do commit.
+
+g) git reset --hard HEAD
+
+Volta o repositório para o último commit, descartando todas as alterações não salvas.
+
+⚠️ As mudanças são perdidas permanentemente.
+
+h) cd Downloads
+
+Comando do terminal que entra na pasta Downloads.
+
+i) pwd
+
+Mostra o caminho completo da pasta atual (Print Working Directory).
+
+j) cd ..
+
+Volta uma pasta acima no diretório.
+
+k) ls
+
+Lista todos os arquivos e pastas do diretório atual.
+
+l) git pull
+
+Baixa as atualizações do repositório remoto e já mescla com o repositório local.
+
+m) git push
+
+Envia os commits do repositório local para o repositório remoto (ex: GitHub ou GitLab).
+
+n) git clone https://gitlab.com/rVenson/linguagemdeprogramacao
+
+Cria uma cópia completa de um repositório remoto na sua máquina.
+
+o) git diff
+
+Mostra as diferenças entre arquivos modificados e a última versão commitada.
+
+p) git show
+
+Mostra detalhes de um commit, incluindo:
+
+autor
+
+data
+
+alterações feitas
+
+Componentes do Git
+1) Stage Area e Commit
+Stage Area (Área de Preparação)
+
+É uma área intermediária onde você coloca os arquivos que deseja incluir no próximo commit.
+
+Exemplo de fluxo:
+
+Arquivo modificado → git add → Stage Area → git commit
+Commit
+
+É um registro permanente das alterações feitas no projeto.
+
+Cada commit contém:
+
+arquivos modificados
+
+autor
+
+data
+
+mensagem de descrição
+
+2) Local Repository
+
+É o repositório que fica no seu computador.
+
+Ele contém:
+
+histórico de commits
+
+arquivos do projeto
+
+controle de versões
+
+Tudo isso fica dentro da pasta .git.
+
+3) Remote Repository
+
+É o repositório que fica em um servidor na internet.
+
+Exemplos:
+
+GitHub
+
+GitLab
+
+Bitbucket
+
+Ele permite:
+
+compartilhar código
+
+trabalhar em equipe
+
+fazer backup do projeto
+
+Comandos usados:
+
+git push → envia alterações
+
+git pull → recebe alterações
