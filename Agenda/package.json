@@ -1,0 +1,26 @@
+{
+  "name": "agenda",
+  "version": "1.0.0",
+  "description": "Projeto para aprendizagem do node.js - projeto de crud de Agenda",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js" 
+  },
+  "keywords": [
+    "agenda",
+    "consulta"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "express": "^5.2.1",
+    "express-handlebars": "^8.0.3",
+    "sequelize": "^6.37.8",
+    "sqlite3": "^6.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
