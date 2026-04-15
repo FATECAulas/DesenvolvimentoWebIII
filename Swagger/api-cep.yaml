@@ -1,0 +1,86 @@
+swagger: "2.0"
+info:
+  title: API de Consulta de CEP
+  description: API para consultar informações de endereço a partir de um CEP e buscar CEPs por endereço.
+  version: 1.0.0
+host: api.exemplo.com
+basePath: /v1
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+
+paths:
+  /cep/{cep}:
+    get:
+      summary: Consulta endereço por CEP
+      description: Retorna os detalhes completos de um endereço para o CEP fornecido.
+      parameters:
+        - name: cep
+          in: path
+          description: O número do CEP a ser consultado (apenas 8 dígitos ).
+          required: true
+          type: string
+          pattern: "^\\d{8}$"
+      responses:
+        200:
+          description: Detalhes do endereço encontrados com sucesso.
+          schema:
+            $ref: '#/definitions/Endereco'
+        400:
+          description: CEP inválido.
+        404:
+          description: CEP não encontrado.
+
+  /endereco/{uf}/{cidade}/{logradouro}:
+    get:
+      summary: Busca CEPs por endereço
+      description: Retorna uma lista de CEPs e endereços correspondentes à UF, cidade e logradouro fornecidos.
+      parameters:
+        - name: uf
+          in: path
+          description: Sigla do estado (ex: SP).
+          required: true
+          type: string
+        - name: cidade
+          in: path
+          description: Nome da cidade.
+          required: true
+          type: string
+        - name: logradouro
+          in: path
+          description: Nome do logradouro.
+          required: true
+          type: string
+      responses:
+        200:
+          description: Lista de endereços encontrados.
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Endereco'
+
+definitions:
+  Endereco:
+    type: object
+    properties:
+      cep:
+        type: string
+        example: "01001000"
+      logradouro:
+        type: string
+        example: "Praça da Sé"
+      bairro:
+        type: string
+        example: "Sé"
+      localidade:
+        type: string
+        example: "São Paulo"
+      uf:
+        type: string
+        example: "SP"
+      ddd:
+        type: string
+        example: "11"
